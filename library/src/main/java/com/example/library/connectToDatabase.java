@@ -12,6 +12,20 @@ public class connectToDatabase {
 			connection = DriverManager.getConnection (
 					"jdbc:mysql://localhost:3306/library",
 					"root", "root");
+	
+			Statement statement;
+			statement = connection.createStatement();
+			ResultSet resultSet;
+			resultSet = statement.executeQuery(
+					null);
+			
+			
+			resultSet.close();
+			statement.close();
+			connection.close();
+		}
+		catch (Exception exception) {
+			System.out.println(exception);
 		}
 	}
 }
