@@ -1,14 +1,11 @@
 package com.example.library.models;
 
-import java.util.ArrayList;
-
-public class user {
+public class User {
 	private int id;
 	private String name;
 	private String email;
 	private String address;
 	private int phoneNumber;
-	private ArrayList<loanIds>;
 	
 	public User() {
 		super();
