@@ -1,5 +1,5 @@
 package com.example.library.repositories;
 
-public class EmployeeRepository {
+public interface EmployeeRepository {
 
 }
