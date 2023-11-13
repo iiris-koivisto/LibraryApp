@@ -10,5 +10,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'libraryangular';
+  title : string;
+
+  constructor(){
+    this.title = 'Spring Boot - Library Application';
+  }
 }
