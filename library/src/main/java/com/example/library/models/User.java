@@ -58,8 +58,8 @@ public class User {
 		this.address = address;
 	}
 	
-	public String getPhoneNumber() {
-		return address;
+	public int getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	public void setPhoneNumber(int phoneNumber) {
