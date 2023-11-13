@@ -1,14 +1,13 @@
 package com.example.library.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	  private int employeeId;
     private String name;
     private String username;
     private String password;
@@ -19,14 +18,14 @@ public class Employee {
 
     public Employee(int id, String name, String username, String password) {
         super();
-        this.id = id;
+        this.employeeId = id;
         this.name = name;
         this.username = username;
         this.password = password;
     }
 
     public int getId() {
-        return id;
+        return employeeId;
     }
 
     public String getName() {
@@ -42,7 +41,7 @@ public class Employee {
     }
     
     public void setId(int id) {
-        this.id = id;
+        this.employeeId = id;
     }
 
     public void setName(String name) {
@@ -60,7 +59,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
+                "id=" + employeeId +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
