@@ -9,6 +9,7 @@ import com.example.library.repositories.UserRepository;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/users")
 public class UserController {
 	
