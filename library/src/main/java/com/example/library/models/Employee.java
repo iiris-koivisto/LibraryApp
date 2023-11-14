@@ -7,7 +7,7 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	  private int employeeId;
+	  private int employee_id;
     private String name;
     private String username;
     private String password;
@@ -18,14 +18,14 @@ public class Employee {
 
     public Employee(int id, String name, String username, String password) {
         super();
-        this.employeeId = id;
+        this.employee_id = id;
         this.name = name;
         this.username = username;
         this.password = password;
     }
 
     public int getId() {
-        return employeeId;
+        return employee_id;
     }
 
     public String getName() {
@@ -41,7 +41,7 @@ public class Employee {
     }
     
     public void setId(int id) {
-        this.employeeId = id;
+        this.employee_id = id;
     }
 
     public void setName(String name) {
@@ -59,7 +59,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + employeeId +
+                "id=" + employee_id +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

@@ -8,7 +8,7 @@ import com.example.library.repositories.LoanRepository;
 
 import java.util.*;
 
-public class loanController {
+public class LoanController {
 	
 	@Autowired
 	private LoanRepository loanRepository;
