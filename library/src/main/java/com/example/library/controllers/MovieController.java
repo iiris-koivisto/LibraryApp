@@ -9,6 +9,7 @@ import com.example.library.repositories.MovieRepository; // Make sure to import 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200"
 @RequestMapping("/movies")
 public class MovieController {
     

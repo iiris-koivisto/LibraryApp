@@ -9,6 +9,7 @@ import com.example.library.repositories.EmployeeRepository;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200"
 @RequestMapping("/employees")
 public class EmployeeController {
 
