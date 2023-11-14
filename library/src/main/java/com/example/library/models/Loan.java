@@ -1,5 +1,7 @@
 package com.example.library.models;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -37,7 +39,7 @@ public class Loan {
 		this.loan_id = id;
 	}
 	
-	public date getStartDate() {
+	public Date getStartDate() {
 		return start_date;
 	}
 	
@@ -45,7 +47,7 @@ public class Loan {
 		this.start_date = start_date;
 	}
 	
-	public date getEndDate() {
+	public Date getEndDate() {
 		return end_date;
 	}
 	
@@ -53,12 +55,12 @@ public class Loan {
 		this.end_date = end_date;
 	}
 	
-	public int getIsReturned() {
-		return start_date;
+	public Boolean getIsReturned() {
+		return isReturned;
 	}
 	
-	public void setIsReturned() {
-		this.start_date = start_date;
+	public void setIsReturned(Boolean isReturned) {
+		this.isReturned = isReturned;
 	}
 
     public int getMovieId() {
