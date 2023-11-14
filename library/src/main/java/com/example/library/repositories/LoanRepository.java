@@ -1,5 +1,9 @@
 package com.example.library.repositories;
 
-public interface LoanRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.example.library.models.Loan;
 
+@Repository
+public interface LoanRepository extends JpaRepository<Loan, Integer>{
 }
