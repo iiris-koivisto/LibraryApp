@@ -7,7 +7,7 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int user_id;
 	private String name;
 	private String email;
 	private String address;
@@ -19,7 +19,7 @@ public class User {
 	
 	public User(int id, String name, String email, String address, int phoneNumber) {
 		super();
-		this.id = id;
+		this.user_id = id;
 		this.name = name;
 		this.email = email;
 		this.address = address;
@@ -27,11 +27,11 @@ public class User {
 	}
 	
 	public int getId() {
-		return id;
+		return user_id;
 	}
 	
 	public void setId(int id) {
-		this.id = id;
+		this.user_id = id;
 	}
 	
 	public String getName() {
@@ -69,7 +69,7 @@ public class User {
 	@Override
 	public String toString() {
 
-		return "User [id = " + id + ", name = " + name + ", email = " + email + ", "
+		return "User [id = " + user_id + ", name = " + name + ", email = " + email + ", "
 				+ "address = " + address + ", phone number = " + phoneNumber + "]";
 
 	}

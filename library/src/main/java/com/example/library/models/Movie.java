@@ -10,7 +10,7 @@ public class Movie {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int movie_id;
 	private String name;
 	private String movieStudio;
 	private String genre;
@@ -18,7 +18,7 @@ public class Movie {
 	
 	public Movie(int id, String name, String movieStudio, String genre, boolean isLoaned) {
 		super();
-		this.id = id;
+		this.movie_id = id;
 		this.name = name;
 		this.movieStudio = movieStudio;
 		this.genre = genre;
@@ -26,11 +26,11 @@ public class Movie {
 	}
 	
 	public int getId() {
-		return id;
+		return movie_id;
 	}
 	
 	public void setId(int id) {
-		this.id = id;
+		this.movie_id = id;
 	}
 	
 	public String getName() {
@@ -68,7 +68,7 @@ public class Movie {
 	@Override
 	public String toString() {
 
-		return "Movie [id = " + id + ", name = " + name + ", movie studio = " + movieStudio + ", "
+		return "Movie [id = " + movie_id + ", name = " + name + ", movie studio = " + movieStudio + ", "
 				+ "genre = " + genre + ", Loaned = " + isLoaned + "]";
 
 	}
