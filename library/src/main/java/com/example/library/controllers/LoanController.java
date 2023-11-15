@@ -70,7 +70,12 @@ public class LoanController {
 	@PostMapping
 	public Loan addLoan(@RequestBody Loan loan) {
 		  // Save the new loan to the database
-		User user = userRepository.findById(Loan.getUserId()).get();
+		User user = userRepository.findById(loan.getUserId()).get();
+		Book book = bookRepository.findById(loan.getBookId()).get();
+		Movie movie = movieRepository.findById(loan.getMovieId()).get();
+		Employee employee = employeeRepository.findById(loan.getEmployeeId()).get();
+		
+		
         return loanRepository.save(loan);
     }
 
