@@ -4,16 +4,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.library.models.Loan;
+import com.example.library.models.Book;
+import com.example.library.models.Movie;
+import com.example.library.models.User;
+import com.example.library.models.Employee;
 import com.example.library.repositories.LoanRepository;
+import com.example.library.repositories.BookRepository;
+import com.example.library.repositories.MovieRepository;
+import com.example.library.repositories.UserRepository;
+import com.example.library.repositories.EmployeeRepository;
 
 import java.util.*;
 
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("loan")
 public class LoanController {
 	
 	@Autowired
 	private LoanRepository loanRepository;
+	@Autowired
+	BookRepository bookRepository;
+	@Autowired
+	MovieRepository movieRepository;
+	@Autowired
+	UserRepository userRepository;
+	@Autowired
+	EmployeeRepository employeeRepository;
 	
-	@GetMapping(value = "/loans")
+	@GetMapping
 	public List<Loan> getAllLoans() {
 		return loanRepository.findAll();
 	}
