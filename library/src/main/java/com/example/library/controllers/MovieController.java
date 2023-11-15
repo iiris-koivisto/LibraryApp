@@ -17,22 +17,22 @@ public class MovieController {
     private MovieRepository movieRepository;
 
     @GetMapping
-    public List<Movie> getAll() {
+    public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Movie get(@PathVariable Integer id) {
+    public Movie getMovie(@PathVariable Integer id) {
         return movieRepository.findById(id).get();
     }
 
     @PostMapping
-    public Movie create(@RequestBody Movie movie) {
+    public Movie addMovie(@RequestBody Movie movie) {
         return movieRepository.save(movie);
     }
 
     @PutMapping("/{id}")
-    public Movie update(@RequestBody Movie movie, @PathVariable Integer id) {
+    public Movie updateMovie(@RequestBody Movie movie, @PathVariable Integer id) {
         Movie m = movieRepository.findById(id).get();
         m.setName(movie.getName());
         m.setMovieStudio(movie.getMovieStudio());
@@ -41,7 +41,7 @@ public class MovieController {
     }
 
     @DeleteMapping("/{id}")
-    public Movie delete(@PathVariable Integer id) {
+    public Movie deleteMovie(@PathVariable Integer id) {
         Movie m = movieRepository.findById(id).get();
         movieRepository.delete(m);
         return m;
