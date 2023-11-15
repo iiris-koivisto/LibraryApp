@@ -67,15 +67,20 @@ public class LoanController {
         return loanRepository.findById(EmployeeId).orElse(null);
     }
 
-	@PostMapping
-	public Loan addLoan(@RequestBody Loan loan) {
-		  // Save the new loan to the database
-		User user = userRepository.findById(loan.getUserId()).get();
-		Book book = bookRepository.findById(loan.getBookId()).get();
-		Movie movie = movieRepository.findById(loan.getMovieId()).get();
-		Employee employee = employeeRepository.findById(loan.getEmployeeId()).get();
-		
-		
+    @PostMapping("/loans")
+    public Loan addLoan(@RequestBody Loan loan) {
+        // Validate if the user, book/movie, and employee exist
+        if (!userRepository.existsById(loan.getUserId()) ||
+            (loan.getBookId() != 0 && !bookRepository.existsById(loan.getBookId())) ||
+            (loan.getMovieId() != 0 && !movieRepository.existsById(loan.getMovieId())) ||
+            !employeeRepository.existsById(loan.getEmployeeId())) {
+            return null; // or throw an exception
+        }
+
+        // Set isReturned to false when creating a new loan
+        loan.setIsReturned(false);
+
+        // Your existing logic for saving the loan
         return loanRepository.save(loan);
     }
 
@@ -97,6 +102,20 @@ public class LoanController {
 	public void deleteLoan(@PathVariable int id) {
 	    // Delete the loan with the given ID from the database
         loanRepository.deleteById(id);
+    }
+	
+    @PutMapping("/loans/{id}/return")
+    public Loan returnLoan(@PathVariable int id) {
+        Optional<Loan> optionalLoan = loanRepository.findById(id);
+
+        if (optionalLoan.isPresent()) {
+            Loan loan = optionalLoan.get();
+            loan.setIsReturned(true);
+            // Your logic for any additional actions when returning a loan
+            return loanRepository.save(loan);
+        } else {
+            return null; // or throw an exception
+        }
     }
 
 }
