@@ -18,7 +18,7 @@ import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("loan")
+@RequestMapping("/loans")
 public class LoanController {
 	
 	@Autowired
@@ -41,30 +41,6 @@ public class LoanController {
 	public Loan getLoanById(@PathVariable int id) {
 	    // findById returns an Optional<Loan>
         return loanRepository.findById(id).orElse(null);
-    }
-	
-	@GetMapping("/{BookId}")
-	public Loan getBookById(@PathVariable int BookId) {
-	    // findById returns an Optional<Book>
-        return loanRepository.findById(BookId).orElse(null);
-    }
-	
-	@GetMapping("/{MovieId}")
-	public Loan getMovieById(@PathVariable int MovieId) {
-	    // findById returns an Optional<Movie>
-        return loanRepository.findById(MovieId).orElse(null);
-    }
-	
-	@GetMapping("/{UserId}")
-	public Loan getUserById(@PathVariable int UserId) {
-	    // findById returns an Optional<User>
-        return loanRepository.findById(UserId).orElse(null);
-    }
-	
-	@GetMapping("/{EmployeeId}")
-	public Loan getEmployeeById(@PathVariable int EmployeeId) {
-	    // findById returns an Optional<Employee>
-        return loanRepository.findById(EmployeeId).orElse(null);
     }
 
     @PostMapping("/loans")
