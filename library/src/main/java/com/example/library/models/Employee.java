@@ -7,7 +7,7 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	  private int employee_id;
+	private int employee_id;
     private String name;
     private String username;
     private String password;
