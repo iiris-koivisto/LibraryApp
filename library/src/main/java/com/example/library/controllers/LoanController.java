@@ -4,10 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.library.models.Loan;
-import com.example.library.models.Book;
-import com.example.library.models.Movie;
-import com.example.library.models.User;
-import com.example.library.models.Employee;
 import com.example.library.repositories.LoanRepository;
 import com.example.library.repositories.BookRepository;
 import com.example.library.repositories.MovieRepository;
@@ -42,6 +38,24 @@ public class LoanController {
 	    // findById returns an Optional<Loan>
         return loanRepository.findById(id).orElse(null);
     }
+	
+	//Search loans with book_id
+	@GetMapping("/book/{book_id}")
+	public List<Loan> getLoanByBookId(@PathVariable int book_id) { 
+        return loanRepository.getLoanByBookId(book_id);
+    }
+	
+	//Search loans with movie_id
+	@GetMapping("/movie/{movie_id}")
+	public List<Loan> getLoanByMovieId(@PathVariable int movie_id) { 
+	    return loanRepository.getLoanByMovieId(movie_id);
+	}
+	
+	//Search loans with user_id, returns only active loans
+	@GetMapping("/user/{user_id}")
+	public List<Loan> getLoanByUserId(@PathVariable int user_id) { 
+		return loanRepository.getLoanByUserId(user_id);
+	}
 
     @PostMapping("/loans")
     public Loan addLoan(@RequestBody Loan loan) {
