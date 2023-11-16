@@ -11,7 +11,7 @@
         <tbody>
         <!--ngFor is used to render the table's rows-->
           <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
+            <td>{{ user.user_id }}</td>
             <td>{{ user.name }}</td>
             <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
           </tr>
