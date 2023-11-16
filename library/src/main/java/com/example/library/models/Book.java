@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
-	@Id;
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int book_id;
 	private String name;
@@ -49,6 +49,14 @@ public class Book {
 	
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public int getPublication_date() {
+		return publication_date;
+	}
+
+	public void setPublication_date(int publication_date) {
+		this.publication_date = publication_date;
 	}
 	
 	public String getPublisher() {
