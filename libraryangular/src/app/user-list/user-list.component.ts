@@ -16,7 +16,7 @@ them in the users field.
 
 export class UserListComponent implements OnInit {
 
-  users: User[];
+  users!: User[];
 
   constructor(private userService: UserService) {
   }
