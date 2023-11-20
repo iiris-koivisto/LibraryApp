@@ -1,0 +1,15 @@
+/* Style for the card container */
+.card-container {
+    margin-top: 20px;
+  }
+  
+  /* Style for the navigation buttons */
+  .nav-button {
+    margin-right: 10px;
+  }
+  
+  /* Style for the active state of the navigation buttons */
+  .nav-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }

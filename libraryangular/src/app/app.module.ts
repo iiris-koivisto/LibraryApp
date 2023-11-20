@@ -10,6 +10,7 @@ import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
+    AppComponent,
     UserListComponent,
     UserFormComponent
   ],
@@ -19,9 +20,9 @@ import { UserService } from './service/user.service';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AppComponent
   ],
   providers: [UserService],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }
