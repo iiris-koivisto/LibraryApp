@@ -13,6 +13,6 @@ export class AppComponent {
   title : string;
 
   constructor(){
-    this.title = 'Spring Boot - Library Application';
+    this.title = 'Library';
   }
 }
