@@ -1,8 +1,6 @@
 package com.example.library.models;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import java.util.Date;
 
 
@@ -18,9 +16,9 @@ public class Book {
 	private String genre;
 	private boolean isLoaned;
 	
-	public Book(int id, String name, String author, Date publication_date, String publisher, String genre, boolean isLoaned) {
+	public Book(int book_id, String name, String author, Date publication_date, String publisher, String genre, boolean isLoaned) {
 		super();
-		this.book_id = id;
+		this.book_id = book_id;
 		this.name= name;
 		this.author = author;
 		this.publication_date = publication_date;
@@ -33,8 +31,8 @@ public class Book {
 		return book_id;
 	}
 	
-	public void setId(int id) {
-		this.book_id = id;
+	public void setId(int book_id) {
+		this.book_id = book_id;
 	}
 	
 	public String getName() {
@@ -87,7 +85,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "Book [id = " + book_id + ", name = " + name + ", author = " + author
+		return "Book [book_id = " + book_id + ", name = " + name + ", author = " + author
 				+ ", publication date = " + publication_date + ", publisher = " + publisher
 				+ ", genre = " + genre + ", loaned = " + isLoaned + "]";
 	}
