@@ -8,7 +8,7 @@ import com.example.library.repositories.BookRepository; // Make sure to import t
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http//localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/books")
 public class BookController {
 	
@@ -40,7 +40,7 @@ public class BookController {
 		return bookRepository.save(b);
 	}
 	
-	@DeleteMapping("/id")
+	@DeleteMapping("/{id}")
 	public Book deleteBook(@PathVariable Integer id) {
 		Book b = bookRepository.findById(id).get();
 		bookRepository.delete(b);
