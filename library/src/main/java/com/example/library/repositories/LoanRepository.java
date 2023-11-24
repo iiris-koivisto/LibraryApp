@@ -24,4 +24,9 @@ public interface LoanRepository extends JpaRepository<Loan, Integer>{
 			"l.user_id = :user_id " +
 			"AND isReturned = false")
 	List<Loan> getLoanByUserId(@Param("user_id")int user_id);
+	
+	@Query("SELECT l FROM Loans WHERE " +
+			"l.employee_id = :employee_id " +
+			"AND isReturned = false")
+	List<Loan> getLoanByEmployeeId(@Param("employee_id")int employee_id);
 }
